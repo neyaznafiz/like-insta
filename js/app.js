@@ -1,7 +1,7 @@
 let posts = [];
 
-const likedPostsId = [];
-const reportedPostsId = [];
+let likedPostsId = [];
+let reportedPostsId = [];
 
 const getLikedPosts = () => {
   return posts.filter((post) => likedPostsId.includes(post.id))
@@ -153,6 +153,7 @@ const displayLikedPosts = () => {
     const div = createPost(post)
     document.getElementById("liked").appendChild(div);
   });
+ likedPostsId = [];
 };
 
 const displayReportedPosts = () => {
@@ -161,6 +162,7 @@ const displayReportedPosts = () => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
+ reportedPostsId = [];
 };
 
 const loadPosts = async () => {
